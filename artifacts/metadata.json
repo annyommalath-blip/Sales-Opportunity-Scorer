@@ -1,0 +1,71 @@
+{
+  "random_state": 42,
+  "target_column": "Opportunity Status",
+  "feature_columns": [
+    "Technology Primary",
+    "City",
+    "B2B Sales Medium",
+    "Sales Velocity",
+    "Sales Stage Iterations",
+    "Opportunity Size (USD)",
+    "Client Revenue Sizing",
+    "Client Employee Sizing",
+    "Business from Client Last Year",
+    "Compete Intel",
+    "Opportunity Sizing"
+  ],
+  "numeric_features": [
+    "Sales Velocity",
+    "Sales Stage Iterations",
+    "Opportunity Size (USD)"
+  ],
+  "categorical_features": [
+    "Technology Primary",
+    "City",
+    "B2B Sales Medium",
+    "Client Revenue Sizing",
+    "Client Employee Sizing",
+    "Business from Client Last Year",
+    "Compete Intel",
+    "Opportunity Sizing"
+  ],
+  "defaults": {
+    "Technology Primary": "ERP Implementation",
+    "City": "Mumbai",
+    "B2B Sales Medium": "Marketing",
+    "Sales Velocity": 43.0,
+    "Sales Stage Iterations": 3.0,
+    "Opportunity Size (USD)": 29845.0,
+    "Client Revenue Sizing": "100K or less",
+    "Client Employee Sizing": "1K or less",
+    "Business from Client Last Year": "0 (No business)",
+    "Compete Intel": "Unknown",
+    "Opportunity Sizing": "40K to 50K"
+  },
+  "class_distribution": {
+    "loss_0": 60398,
+    "won_1": 17627
+  },
+  "imbalance_note": "Class imbalance detected; balanced class weights (and scale_pos_weight for XGBoost) were applied.",
+  "best_overall_model": "XGBoost",
+  "best_tree_model": "XGBoost",
+  "top_encoded_features_from_shap": [
+    "num__Sales Velocity",
+    "cat__B2B Sales Medium_Online Leads",
+    "num__Sales Stage Iterations",
+    "num__Opportunity Size (USD)",
+    "cat__B2B Sales Medium_Tele Sales",
+    "cat__City_Bengaluru",
+    "cat__B2B Sales Medium_Enterprise Sellers",
+    "cat__Client Revenue Sizing_More than 1M"
+  ],
+  "manual_input_features": [
+    "Sales Velocity",
+    "Sales Stage Iterations",
+    "Opportunity Size (USD)",
+    "B2B Sales Medium",
+    "Technology Primary",
+    "Opportunity Sizing",
+    "Compete Intel"
+  ]
+}
