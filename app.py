@@ -1,14 +1,35 @@
 import json
+import importlib
 from pathlib import Path
+import subprocess
+import sys
+
+import matplotlib.pyplot as plt
+import streamlit as st
+
+
+def ensure_package(module_name: str, pip_name: str | None = None) -> None:
+    try:
+        importlib.import_module(module_name)
+    except ModuleNotFoundError:
+        subprocess.check_call(
+            [sys.executable, "-m", "pip", "install", pip_name or module_name]
+        )
+
+
+# Streamlit Cloud safety net: install missing runtime deps if resolver skipped any.
+ensure_package("joblib")
+ensure_package("numpy")
+ensure_package("pandas")
+ensure_package("plotly", "plotly==5.24.1")
+ensure_package("shap")
 
 import joblib
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 import shap
-import streamlit as st
 
 BASE_DIR = Path(__file__).resolve().parent
 ARTIFACT_DIR = BASE_DIR / "artifacts"
